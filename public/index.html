@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KCo Systems</title>
+<meta name="description" content="We turn public data into competitive advantages for local operators.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; color: #0a0a0a; background: #fff; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+  :root {
+    --accent: #8C7A5E;
+    --accent-light: #A89574;
+    --accent-bg: #F5F0EA;
+    --accent-border: #D9CEBD;
+    --surface: #FAFAF8;
+    --border: #E4E2DD;
+    --border-light: #EEECE7;
+    --text-primary: #0a0a0a;
+    --text-secondary: #52524D;
+    --text-muted: #8A8A82;
+  }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  nav { padding: 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(255,255,255,0.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); z-index: 10; }
+  nav .container { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+  .logo { font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: var(--text-primary); text-decoration: none; }
+  .nav-link { font-size: 13px; font-weight: 600; color: var(--text-primary); text-decoration: none; padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px; transition: all 0.15s ease; }
+  .nav-link:hover { border-color: var(--text-primary); }
+
+  /* Hero */
+  .hero { padding: 96px 0 88px; max-width: 640px; }
+  .hero h1 { font-size: 48px; font-weight: 800; letter-spacing: -2.5px; line-height: 1.05; margin-bottom: 20px; }
+  .hero p { font-size: 17px; color: var(--text-secondary); line-height: 1.7; max-width: 480px; }
+
+  /* How we work */
+  .how-strip { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: grid; grid-template-columns: repeat(3, 1fr); }
+  .how-item { padding: 32px 28px; border-right: 1px solid var(--border); }
+  .how-item:last-child { border-right: none; }
+  .how-num { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 10px; }
+  .how-title { font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; letter-spacing: -0.2px; }
+  .how-desc { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* Products */
+  .section { padding: 72px 0; }
+  .section-label { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; }
+
+  .product-card { padding: 36px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); transition: all 0.2s ease; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }
+  .product-card:hover { border-color: var(--accent-border); box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+  .product-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--accent); background: var(--accent-bg); border: 1px solid var(--accent-border); padding: 4px 10px; border-radius: 100px; margin-bottom: 14px; }
+  .product-badge::before { content: ''; display: block; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+  .product-name { font-size: 24px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 10px; }
+  .product-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px; max-width: 420px; }
+  .product-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
+  .tag { font-size: 10.5px; font-weight: 600; letter-spacing: 0.2px; padding: 5px 10px; background: #fff; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); }
+  .product-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: var(--text-primary); text-decoration: none; transition: gap 0.15s ease; }
+  .product-link:hover { gap: 10px; }
+  .product-stat-col { display: flex; flex-direction: column; gap: 16px; padding-left: 32px; border-left: 1px solid var(--border); }
+  .product-stat { text-align: center; }
+  .product-stat-num { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; }
+  .product-stat-label { font-size: 9.5px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--text-muted); margin-top: 2px; }
+
+  /* Audience */
+  .audience-section { border-top: 1px solid var(--border); padding: 72px 0; }
+  .audience-inner { display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: start; }
+  .audience-label { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .audience-title { font-size: 28px; font-weight: 800; letter-spacing: -1px; line-height: 1.15; }
+  .audience-items { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .audience-item { padding: 18px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; }
+  .audience-item-title { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 3px; }
+  .audience-item-desc { font-size: 12px; color: var(--text-muted); line-height: 1.45; }
+
+  /* Contact */
+  .contact-section { border-top: 1px solid var(--border); padding: 72px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .contact-text { font-size: 16px; color: var(--text-secondary); }
+  .contact-email { font-size: 16px; font-weight: 700; color: var(--text-primary); text-decoration: none; border-bottom: 2px solid var(--accent-border); padding-bottom: 2px; transition: border-color 0.15s; }
+  .contact-email:hover { border-color: var(--accent); }
+
+  /* Footer */
+  footer { padding: 32px 0; border-top: 1px solid var(--border); }
+  footer p, footer a { font-size: 12px; color: var(--text-muted); text-decoration: none; }
+  footer a:hover { color: var(--text-secondary); }
+  .footer-links { display: flex; gap: 16px; }
+
+  @media (max-width: 768px) {
+    .container { padding: 0 20px; }
+    .hero { padding: 56px 0 48px; }
+    .hero h1 { font-size: 36px; letter-spacing: -1.5px; }
+    .how-strip { grid-template-columns: 1fr; }
+    .how-item { border-right: none; border-bottom: 1px solid var(--border); }
+    .how-item:last-child { border-bottom: none; }
+    .product-card { grid-template-columns: 1fr; }
+    .product-stat-col { flex-direction: row; padding-left: 0; border-left: none; border-top: 1px solid var(--border); padding-top: 20px; }
+    .audience-inner { grid-template-columns: 1fr; gap: 24px; }
+    .audience-items { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="logo">KCo Systems</a>
+    <a href="/permitfeed" class="nav-link">PermitFeed →</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="hero">
+    <h1>Public data,<br>private advantage.</h1>
+    <p>We monitor public records, detect changes, and deliver filtered intelligence to local operators — before their competitors see it.</p>
+  </div>
+</div>
+
+<!-- How we work -->
+<div class="how-strip">
+  <div class="how-item">
+    <div class="how-num">01</div>
+    <div class="how-title">Monitor public records</div>
+    <div class="how-desc">Permits, filings, and registrations — pulled and updated automatically.</div>
+  </div>
+  <div class="how-item">
+    <div class="how-num">02</div>
+    <div class="how-title">Filter for signal</div>
+    <div class="how-desc">Industry-specific filters remove noise and surface what matters to your business.</div>
+  </div>
+  <div class="how-item">
+    <div class="how-num">03</div>
+    <div class="how-title">Deliver weekly</div>
+    <div class="how-desc">A short, ranked list in your inbox every Monday. Ready to act on.</div>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Products -->
+  <div class="section">
+    <div class="section-label">Products</div>
+    <div class="product-card">
+      <div>
+        <div class="product-badge">Live — Austin, TX</div>
+        <div class="product-name">PermitFeed</div>
+        <div class="product-desc">Filtered weekly construction permits for operators who need to be first to new job sites. Territory-specific. Priority-ranked. Limited distribution.</div>
+        <div class="product-tags">
+          <span class="tag">Construction Permits</span>
+          <span class="tag">Weekly Delivery</span>
+          <span class="tag">Territory-Specific</span>
+        </div>
+        <a href="/permitfeed" class="product-link">Learn more <span>→</span></a>
+      </div>
+      <div class="product-stat-col">
+        <div class="product-stat">
+          <div class="product-stat-num">10–18</div>
+          <div class="product-stat-label">Typical Weekly Opps</div>
+        </div>
+        <div class="product-stat">
+          <div class="product-stat-num">Custom</div>
+          <div class="product-stat-label">Territory Size</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Who we serve -->
+<div class="audience-section">
+  <div class="container">
+    <div class="audience-inner">
+      <div>
+        <div class="audience-label">Built For</div>
+        <div class="audience-title">Local operators who need to move first.</div>
+      </div>
+      <div class="audience-items">
+        <div class="audience-item">
+          <div class="audience-item-title">Dumpster &amp; Roll-Off</div>
+          <div class="audience-item-desc">First to the job site wins the contract.</div>
+        </div>
+        <div class="audience-item">
+          <div class="audience-item-title">Portable Sanitation</div>
+          <div class="audience-item-desc">New construction = guaranteed demand.</div>
+        </div>
+        <div class="audience-item">
+          <div class="audience-item-title">Temporary Fencing</div>
+          <div class="audience-item-desc">Every job site. Every time.</div>
+        </div>
+        <div class="audience-item">
+          <div class="audience-item-title">Site Services</div>
+          <div class="audience-item-desc">Any operator competing for new projects.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Contact -->
+  <div class="contact-section">
+    <span class="contact-text">Questions or partnership inquiries</span>
+    <a href="mailto:info@kco-systems.com" class="contact-email">info@kco-systems.com</a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 KCo Systems · Austin, TX</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/accessibility">Accessibility</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility — KCo Systems</title>
+<meta name="description" content="KCo Systems accessibility statement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; color: #0a0a0a; background: #fff; -webkit-font-smoothing: antialiased; }
+  :root { --accent: #8C7A5E; --surface: #FAFAF8; --border: #E4E2DD; --text-secondary: #52524D; --text-muted: #8A8A82; }
+  .container { max-width: 680px; margin: 0 auto; padding: 0 32px; }
+  nav { padding: 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(255,255,255,0.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); z-index: 10; }
+  nav .container { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+  .logo { font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: #0a0a0a; text-decoration: none; }
+  .nav-link { font-size: 13px; font-weight: 500; color: var(--text-muted); text-decoration: none; }
+  .nav-link:hover { color: #0a0a0a; }
+  .page-header { padding: 72px 0 48px; border-bottom: 1px solid var(--border); }
+  .page-header h1 { font-size: 36px; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 8px; }
+  .page-header .meta { font-size: 13px; color: var(--text-muted); }
+  .legal-body { padding: 48px 0 80px; }
+  .legal-body h2 { font-size: 18px; font-weight: 700; letter-spacing: -0.3px; margin: 40px 0 12px; }
+  .legal-body h2:first-child { margin-top: 0; }
+  .legal-body p { font-size: 14px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 12px; }
+  .legal-body ul { margin: 8px 0 16px 20px; }
+  .legal-body li { font-size: 14px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 4px; }
+  .legal-body a { color: #0a0a0a; }
+  footer { padding: 32px 0; border-top: 1px solid var(--border); }
+  footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  footer p, footer a { font-size: 12px; color: var(--text-muted); text-decoration: none; }
+  footer a:hover { color: var(--text-secondary); }
+  .footer-links { display: flex; gap: 16px; }
+  @media (max-width: 640px) { .container { padding: 0 20px; } .page-header { padding: 48px 0 32px; } .page-header h1 { font-size: 28px; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="logo">KCo Systems</a>
+    <a href="/" class="nav-link">← Back</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="page-header">
+    <h1>Accessibility</h1>
+    <div class="meta">Effective date: March 17, 2026 · Last updated: March 17, 2026</div>
+  </div>
+
+  <div class="legal-body">
+
+    <h2>Our Commitment</h2>
+    <p>Karatas &amp; Company LLC, doing business as KCo Systems, is committed to making our website and products accessible to all users. We aim to follow established web accessibility standards and continually improve the experience for everyone.</p>
+
+    <h2>What We Do</h2>
+    <ul>
+      <li>Use semantic HTML and proper heading structure</li>
+      <li>Maintain sufficient color contrast ratios</li>
+      <li>Avoid using color alone as an indicator — we pair color with text labels and icons</li>
+      <li>Ensure interactive elements are keyboard-accessible</li>
+      <li>Use descriptive alt text for meaningful images</li>
+      <li>Design with readable font sizes and clear visual hierarchy</li>
+    </ul>
+
+    <h2>Feedback</h2>
+    <p>If you encounter an accessibility barrier on our website or have suggestions for improvement, we want to hear from you. Please contact us at <a href="mailto:info@kco-systems.com">info@kco-systems.com</a> and we will do our best to address the issue.</p>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 KCo Systems · Austin, TX</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/accessibility">Accessibility</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
