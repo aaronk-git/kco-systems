@@ -44,23 +44,75 @@
   .nav-link { font-size: 15px; font-weight: 600; color: var(--text-primary); text-decoration: none; padding: 10px 20px; border: 1px solid var(--border); border-radius: 8px; transition: all 0.15s ease; }
   .nav-link:hover { border-color: var(--text-primary); }
 
-  /* Hero */
-  .hero { padding: 100px 0 92px; max-width: 720px; }
-  .hero h1 { font-size: 56px; font-weight: 800; letter-spacing: -2.5px; line-height: 1.05; margin-bottom: 24px; }
-  .hero p { font-size: 19px; color: var(--text-secondary); line-height: 1.7; max-width: 540px; }
+  /* Hero — two column */
+  .hero { padding: 88px 0 0; }
+  .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  .hero-copy { padding-top: 20px; }
+  .hero h1 { font-size: 52px; font-weight: 800; letter-spacing: -2.5px; line-height: 1.05; margin-bottom: 24px; }
+  .hero p { font-size: 19px; color: var(--text-secondary); line-height: 1.7; max-width: 460px; margin-bottom: 36px; }
+  .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .btn-primary { display: inline-block; font-size: 16px; font-weight: 600; color: #fff; background: var(--text-primary); padding: 14px 28px; border-radius: 8px; text-decoration: none; transition: all 0.15s; border: 1px solid var(--text-primary); }
+  .btn-primary:hover { background: #1a1a1a; }
+  .btn-ghost { font-size: 15px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+  .btn-ghost:hover { color: var(--text-primary); }
+
+  /* Hero artifact — mini digest mock */
+  .hero-artifact { position: relative; }
+  .digest-mock { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); }
+  .digest-header { padding: 20px 22px 16px; border-bottom: 1px solid var(--border-light); }
+  .digest-title { font-size: 14px; font-weight: 700; letter-spacing: -0.2px; margin-bottom: 2px; }
+  .digest-meta { font-size: 12px; font-weight: 500; color: var(--text-muted); margin-top: 6px; }
+  .digest-stats { display: flex; gap: 1px; background: var(--border-light); }
+  .digest-stat { flex: 1; padding: 14px 16px; background: #fff; text-align: center; }
+  .digest-stat-num { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; }
+  .digest-stat-label { font-size: 11px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; color: var(--text-muted); margin-top: 2px; }
+  .digest-section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 10px 22px 6px; color: var(--accent); background: var(--accent-bg); border-top: 1px solid var(--accent-border); border-bottom: 1px solid var(--accent-border); }
+  .digest-row { display: grid; grid-template-columns: 1fr 100px 72px; gap: 8px; padding: 12px 22px; border-bottom: 1px solid var(--border-light); align-items: center; font-size: 13px; }
+  .digest-row:last-child { border-bottom: none; }
+  .digest-row-addr { font-weight: 600; color: var(--text-primary); }
+  .digest-row-type { font-size: 12px; color: var(--text-secondary); }
+  .digest-row-sqft { font-size: 12px; color: var(--text-muted); text-align: right; font-weight: 500; }
+  .digest-row.redacted .digest-row-addr,
+  .digest-row.redacted .digest-row-type,
+  .digest-row.redacted .digest-row-sqft { color: transparent; background: var(--border-light); border-radius: 3px; height: 14px; display: block; }
+  .digest-row.redacted .digest-row-type { width: 70px; }
+  .digest-row.redacted .digest-row-sqft { width: 48px; margin-left: auto; }
+  .digest-footer { padding: 14px 22px; background: var(--surface); border-top: 1px solid var(--border-light); display: flex; justify-content: space-between; align-items: center; }
+  .digest-footer-text { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+  .digest-footer-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; color: var(--accent); background: var(--accent-bg); border: 1px solid var(--accent-border); padding: 3px 8px; border-radius: 4px; }
+
+  /* Data strip */
+  .data-strip { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 80px; }
+  .data-item { padding: 32px 0; text-align: center; border-right: 1px solid var(--border); }
+  .data-item:last-child { border-right: none; }
+  .data-num { font-size: 28px; font-weight: 800; letter-spacing: -1px; color: var(--text-primary); }
+  .data-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; font-weight: 500; }
 
   /* How we work */
-  .how-strip { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: grid; grid-template-columns: repeat(3, 1fr); }
-  .how-item { padding: 36px 32px; border-right: 1px solid var(--border); }
-  .how-item:last-child { border-right: none; }
-  .how-num { font-size: 12px; font-weight: 700; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 12px; }
-  .how-title { font-size: 17px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; letter-spacing: -0.2px; }
+  .how-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+  .how-header { margin-bottom: 40px; }
+  .section-label { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .how-header h2 { font-size: 36px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; }
+  .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .how-cell { padding: 36px 32px; background: #fff; }
+  .how-num { font-size: 12px; font-weight: 700; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 14px; }
+  .how-title { font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; letter-spacing: -0.2px; }
   .how-desc { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
+
+  /* Why section */
+  .why-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+  .why-inner { display: grid; grid-template-columns: 340px 1fr; gap: 60px; align-items: start; }
+  .why-left h2 { font-size: 32px; font-weight: 800; letter-spacing: -1px; line-height: 1.15; margin-top: 8px; }
+  .why-left p { font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-top: 16px; }
+  .why-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .why-card { padding: 28px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; transition: border-color 0.15s; }
+  .why-card:hover { border-color: var(--accent-border); }
+  .why-card-icon { font-size: 20px; margin-bottom: 12px; }
+  .why-card-title { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+  .why-card-desc { font-size: 14px; color: var(--text-muted); line-height: 1.55; }
 
   /* Products */
   .section { padding: 80px 0; }
-  .section-label { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; }
-
   .product-card { padding: 40px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); transition: all 0.2s ease; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
   .product-card:hover { border-color: var(--accent-border); box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
   .product-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--accent); background: var(--accent-bg); border: 1px solid var(--accent-border); padding: 6px 14px; border-radius: 100px; margin-bottom: 16px; }
@@ -71,7 +123,7 @@
   .tag { font-size: 13px; font-weight: 600; letter-spacing: 0.2px; padding: 6px 12px; background: #fff; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); }
   .product-link { display: inline-flex; align-items: center; gap: 6px; font-size: 16px; font-weight: 700; color: var(--text-primary); text-decoration: none; transition: gap 0.15s ease; }
   .product-link:hover { gap: 10px; }
-  .product-stat-col { display: flex; flex-direction: column; gap: 16px; padding-left: 32px; border-left: 1px solid var(--border); }
+  .product-stat-col { display: flex; flex-direction: column; gap: 20px; padding-left: 36px; border-left: 1px solid var(--border); }
   .product-stat { text-align: center; }
   .product-stat-num { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; }
   .product-stat-label { font-size: 12px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--text-muted); margin-top: 4px; }
@@ -79,36 +131,45 @@
   /* Audience */
   .audience-section { border-top: 1px solid var(--border); padding: 80px 0; }
   .audience-inner { display: grid; grid-template-columns: 300px 1fr; gap: 60px; align-items: start; }
-  .audience-label { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
-  .audience-title { font-size: 32px; font-weight: 800; letter-spacing: -1px; line-height: 1.15; }
+  .audience-title { font-size: 32px; font-weight: 800; letter-spacing: -1px; line-height: 1.15; margin-top: 8px; }
   .audience-items { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .audience-item { padding: 22px 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; }
-  .audience-item-title { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+  .audience-item { padding: 24px 28px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; transition: border-color 0.15s; }
+  .audience-item:hover { border-color: var(--accent-border); }
+  .audience-item-title { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 5px; }
   .audience-item-desc { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
 
-  /* Contact */
-  .contact-section { border-top: 1px solid var(--border); padding: 80px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-  .contact-text { font-size: 18px; color: var(--text-secondary); }
-  .contact-email { font-size: 18px; font-weight: 700; color: var(--text-primary); text-decoration: none; border-bottom: 2px solid var(--accent-border); padding-bottom: 2px; transition: border-color 0.15s; }
-  .contact-email:hover { border-color: var(--accent); }
+  /* CTA Block */
+  .cta-block { padding: 88px 0; border-top: 1px solid var(--border); background: var(--surface); text-align: center; }
+  .cta-block h2 { font-size: 40px; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 14px; }
+  .cta-block p { font-size: 18px; color: var(--text-secondary); margin-bottom: 36px; max-width: 460px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+  .cta-email { display: block; font-size: 15px; color: var(--text-muted); margin-top: 16px; text-decoration: none; }
+  .cta-email:hover { color: var(--text-secondary); }
 
   /* Footer */
   footer { padding: 36px 0; border-top: 1px solid var(--border); }
+  footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
   footer p, footer a { font-size: 14px; color: var(--text-muted); text-decoration: none; }
   footer a:hover { color: var(--text-secondary); }
   .footer-links { display: flex; gap: 16px; }
 
   @media (max-width: 768px) {
     .container { padding: 0 20px; }
-    .hero { padding: 56px 0 48px; }
-    .hero h1 { font-size: 36px; letter-spacing: -1.5px; }
-    .how-strip { grid-template-columns: 1fr; }
-    .how-item { border-right: none; border-bottom: 1px solid var(--border); }
-    .how-item:last-child { border-bottom: none; }
+    .hero { padding: 56px 0 0; }
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero h1 { font-size: 38px; letter-spacing: -1.5px; }
+    .hero-copy { padding-top: 0; }
+    .data-strip { grid-template-columns: 1fr 1fr; }
+    .data-item:nth-child(2) { border-right: none; }
+    .data-item:nth-child(1), .data-item:nth-child(2) { border-bottom: 1px solid var(--border); }
+    .how-grid { grid-template-columns: 1fr; }
+    .why-inner { grid-template-columns: 1fr; gap: 32px; }
+    .why-cards { grid-template-columns: 1fr; }
     .product-card { grid-template-columns: 1fr; }
     .product-stat-col { flex-direction: row; padding-left: 0; border-left: none; border-top: 1px solid var(--border); padding-top: 20px; }
     .audience-inner { grid-template-columns: 1fr; gap: 24px; }
     .audience-items { grid-template-columns: 1fr; }
+    .cta-block { padding: 56px 0; }
+    .cta-block h2 { font-size: 30px; }
   }
 </style>
 </head>
@@ -121,38 +182,148 @@
   </div>
 </nav>
 
+<!-- HERO — two column with digest artifact -->
 <div class="container">
   <div class="hero">
-    <h1>Public data,<br>private advantage.</h1>
-    <p>We monitor public permit records, filter for the projects that matter, and deliver a ranked weekly list to local operators — before their competitors see it. Currently live in Austin, TX.</p>
-    <div style="margin-top:32px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-      <a href="/permitfeed" style="display:inline-block;font-size:16px;font-weight:600;color:#fff;background:#0a0a0a;padding:14px 28px;border-radius:8px;text-decoration:none;border:1px solid #0a0a0a;transition:all 0.15s;">See PermitFeed →</a>
-      <a href="mailto:info@kco-systems.com" style="font-size:15px;font-weight:500;color:var(--text-muted);text-decoration:none;">info@kco-systems.com</a>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>Public data,<br>private advantage.</h1>
+        <p>We monitor public permit records, filter for the projects that matter, and deliver a ranked weekly list to local operators — before their competitors see it.</p>
+        <div class="hero-actions">
+          <a href="/permitfeed" class="btn-primary">See PermitFeed →</a>
+          <a href="mailto:info@kco-systems.com" class="btn-ghost">info@kco-systems.com</a>
+        </div>
+      </div>
+      <div class="hero-artifact">
+        <div class="digest-mock">
+          <div class="digest-header">
+            <div class="digest-title">PermitFeed — Weekly Digest</div>
+            <div class="digest-meta">Austin, TX · Week of Mar 10, 2026</div>
+          </div>
+          <div class="digest-stats">
+            <div class="digest-stat">
+              <div class="digest-stat-num">14</div>
+              <div class="digest-stat-label">Filtered</div>
+            </div>
+            <div class="digest-stat">
+              <div class="digest-stat-num">5</div>
+              <div class="digest-stat-label">Priority</div>
+            </div>
+            <div class="digest-stat">
+              <div class="digest-stat-num">9</div>
+              <div class="digest-stat-label">Secondary</div>
+            </div>
+          </div>
+          <div class="digest-section-label">▲ Priority</div>
+          <div class="digest-row">
+            <span class="digest-row-addr">4812 Westlake Dr</span>
+            <span class="digest-row-type">Demolition</span>
+            <span class="digest-row-sqft">6,200 sf</span>
+          </div>
+          <div class="digest-row">
+            <span class="digest-row-addr">901 W Braker Ln</span>
+            <span class="digest-row-type">Commercial New</span>
+            <span class="digest-row-sqft">12,400 sf</span>
+          </div>
+          <div class="digest-row redacted">
+            <span class="digest-row-addr">&nbsp;</span>
+            <span class="digest-row-type">&nbsp;</span>
+            <span class="digest-row-sqft">&nbsp;</span>
+          </div>
+          <div class="digest-footer">
+            <span class="digest-footer-text">Sample · Actual data varies by territory</span>
+            <span class="digest-footer-badge">Limited Distribution</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- How we work -->
-<div class="how-strip">
-  <div class="how-item">
-    <div class="how-num">01</div>
-    <div class="how-title">Monitor public records</div>
-    <div class="how-desc">Permits, filings, and registrations — pulled and updated automatically.</div>
+<!-- DATA STRIP -->
+<div class="data-strip">
+  <div class="data-item">
+    <div class="data-num">2.3M+</div>
+    <div class="data-label">Permits in database</div>
   </div>
-  <div class="how-item">
-    <div class="how-num">02</div>
-    <div class="how-title">Filter for signal</div>
-    <div class="how-desc">Industry-specific filters remove noise and surface what matters to your business.</div>
+  <div class="data-item">
+    <div class="data-num">Weekly</div>
+    <div class="data-label">Delivery cadence</div>
   </div>
-  <div class="how-item">
-    <div class="how-num">03</div>
-    <div class="how-title">Deliver weekly</div>
-    <div class="how-desc">A short, ranked list in your inbox every Monday. Ready to act on.</div>
+  <div class="data-item">
+    <div class="data-num">Austin</div>
+    <div class="data-label">Live market</div>
+  </div>
+  <div class="data-item">
+    <div class="data-num">Limited</div>
+    <div class="data-label">Distribution per territory</div>
   </div>
 </div>
 
+<!-- HOW WE WORK -->
+<div class="how-section">
+  <div class="container">
+    <div class="how-header">
+      <div class="section-label">How It Works</div>
+      <h2>Three steps. Every week.</h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-cell">
+        <div class="how-num">01</div>
+        <div class="how-title">Monitor public records</div>
+        <div class="how-desc">Permits, filings, and registrations — pulled and updated automatically from municipal sources.</div>
+      </div>
+      <div class="how-cell">
+        <div class="how-num">02</div>
+        <div class="how-title">Filter for signal</div>
+        <div class="how-desc">Industry-specific filters remove the noise and surface the project types worth your time.</div>
+      </div>
+      <div class="how-cell">
+        <div class="how-num">03</div>
+        <div class="how-title">Deliver weekly</div>
+        <div class="how-desc">A short, ranked list in your inbox every Monday. Priority-sorted and ready to act on.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY KCo -->
+<div class="why-section">
+  <div class="container">
+    <div class="why-inner">
+      <div class="why-left">
+        <div class="section-label">Why KCo</div>
+        <h2>Built different from a data dump.</h2>
+        <p>Raw permit feeds are hundreds of rows of noise. We do the filtering so you can spend your time calling — not sorting spreadsheets.</p>
+      </div>
+      <div class="why-cards">
+        <div class="why-card">
+          <div class="why-card-icon">⊞</div>
+          <div class="why-card-title">Filtered, Not Raw</div>
+          <div class="why-card-desc">Only the permit types that matter for your business. No pool permits, no solar installs, no noise.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-card-icon">◎</div>
+          <div class="why-card-title">Territory-Specific</div>
+          <div class="why-card-desc">Your zip codes. Your service area. Nothing outside your operating range.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-card-icon">▲</div>
+          <div class="why-card-title">Priority Ranked</div>
+          <div class="why-card-desc">Highest-value opportunities sorted to the top. Demolitions and large builds surface first.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-card-icon">◧</div>
+          <div class="why-card-title">Limited Distribution</div>
+          <div class="why-card-desc">We aim to avoid sharing the same filtered list with direct competitors in your territory.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
 <div class="container">
-  <!-- Products -->
   <div class="section">
     <div class="section-label">Products</div>
     <div class="product-card">
@@ -181,12 +352,12 @@
   </div>
 </div>
 
-<!-- Who we serve -->
+<!-- WHO WE SERVE -->
 <div class="audience-section">
   <div class="container">
     <div class="audience-inner">
       <div>
-        <div class="audience-label">Built For</div>
+        <div class="section-label">Built For</div>
         <div class="audience-title">Local operators who need to move first.</div>
       </div>
       <div class="audience-items">
@@ -211,11 +382,13 @@
   </div>
 </div>
 
-<div class="container">
-  <!-- Contact -->
-  <div class="contact-section">
-    <span class="contact-text">Questions or partnership inquiries</span>
-    <a href="mailto:info@kco-systems.com" class="contact-email">info@kco-systems.com</a>
+<!-- CTA BLOCK -->
+<div class="cta-block">
+  <div class="container">
+    <h2>See what you're missing.</h2>
+    <p>Tell us your territory and service type. We'll build a sample filtered for your market — free.</p>
+    <a href="mailto:info@kco-systems.com?subject=PermitFeed%20Sample%20Request&body=Service%20type%3A%20%0ATerritory%20%2F%20zip%20codes%3A%20%0AAnything%20else%3A%20" class="btn-primary">Request a Sample</a>
+    <a href="mailto:info@kco-systems.com" class="cta-email">info@kco-systems.com</a>
   </div>
 </div>
 
