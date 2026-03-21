@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KCo Systems</title>
 <meta name="description" content="We turn public data into competitive advantages for local operators.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:title" content="KCo Systems">
+<meta property="og:description" content="We turn public data into competitive advantages for local operators.">
+<meta property="og:image" content="https://kco-systems.com/assets/og.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kco-systems.com/assets/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -30,7 +39,8 @@
   /* Nav */
   nav { padding: 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(255,255,255,0.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); z-index: 10; }
   nav .container { display: flex; justify-content: space-between; align-items: center; height: 60px; }
-  .logo { font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: var(--text-primary); text-decoration: none; }
+  .logo { display: flex; align-items: center; text-decoration: none; }
+  .logo img { height: 28px; width: auto; }
   .nav-link { font-size: 13px; font-weight: 600; color: var(--text-primary); text-decoration: none; padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px; transition: all 0.15s ease; }
   .nav-link:hover { border-color: var(--text-primary); }
 
@@ -106,7 +116,7 @@
 
 <nav>
   <div class="container">
-    <a href="/" class="logo">KCo Systems</a>
+    <a href="/" class="logo"><img src="/assets/logo-black.png" srcset="/assets/logo-black-2x.png 2x" alt="KCo Systems" height="28"></a>
     <a href="/permitfeed" class="nav-link">PermitFeed →</a>
   </div>
 </nav>
@@ -114,7 +124,11 @@
 <div class="container">
   <div class="hero">
     <h1>Public data,<br>private advantage.</h1>
-    <p>We monitor public records, detect changes, and deliver filtered intelligence to local operators — before their competitors see it.</p>
+    <p>We monitor public permit records, filter for the projects that matter, and deliver a ranked weekly list to local operators — before their competitors see it. Currently live in Austin, TX.</p>
+    <div style="margin-top:32px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+      <a href="/permitfeed" style="display:inline-block;font-size:14px;font-weight:600;color:#fff;background:#0a0a0a;padding:13px 24px;border-radius:8px;text-decoration:none;border:1px solid #0a0a0a;transition:all 0.15s;">See PermitFeed →</a>
+      <a href="mailto:info@kco-systems.com" style="font-size:13px;font-weight:500;color:var(--text-muted);text-decoration:none;">info@kco-systems.com</a>
+    </div>
   </div>
 </div>
 
@@ -207,7 +221,7 @@
 
 <footer>
   <div class="container">
-    <p>© 2026 KCo Systems · Austin, TX</p>
+    <p>© 2026 KCo Systems · San Diego, CA</p>
     <div class="footer-links">
       <a href="/privacy">Privacy</a>
       <a href="/terms">Terms</a>

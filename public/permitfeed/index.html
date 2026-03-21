@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PermitFeed — Filtered Construction Permits for Your Territory</title>
 <meta name="description" content="A filtered weekly list of construction permits for your territory. Demolitions, commercial projects, large builds — sorted by what matters most to your business.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:title" content="PermitFeed — Filtered Construction Permits">
+<meta property="og:description" content="A filtered weekly list of construction permits for your territory.">
+<meta property="og:image" content="https://kco-systems.com/assets/og.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kco-systems.com/assets/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,7 +41,8 @@
   /* Nav */
   nav { padding: 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(255,255,255,0.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); z-index: 10; }
   nav .container { display: flex; justify-content: space-between; align-items: center; height: 60px; }
-  .logo { font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: var(--text-primary); text-decoration: none; }
+  .logo { display: flex; align-items: center; text-decoration: none; }
+  .logo img { height: 28px; width: auto; }
   .nav-cta { font-size: 13px; font-weight: 600; color: #fff; background: var(--text-primary); padding: 9px 18px; border-radius: 8px; text-decoration: none; transition: all 0.15s; border: 1px solid var(--text-primary); }
   .nav-cta:hover { background: #1a1a1a; }
 
@@ -187,7 +197,7 @@
 
 <nav>
   <div class="container">
-    <a href="/" class="logo">KCo Systems</a>
+    <a href="/" class="logo"><img src="/assets/logo-black.png" srcset="/assets/logo-black-2x.png 2x" alt="KCo Systems" height="28"></a>
     <a href="#request" class="nav-cta">Request a Sample</a>
   </div>
 </nav>
@@ -211,13 +221,13 @@
           <div class="digest-header">
             <div class="digest-title">PermitFeed — Weekly Digest</div>
             <div class="digest-meta">
-              <div class="digest-meta-item"><strong>North Austin</strong> · 14 zips</div>
-              <div class="digest-meta-item">Mar 10–16, 2026</div>
+              <div class="digest-meta-item"><strong>Sample Territory</strong></div>
+              <div class="digest-meta-item">Week of Mar 10, 2026</div>
             </div>
           </div>
           <div class="digest-stats">
             <div class="digest-stat">
-              <div class="digest-stat-num">16</div>
+              <div class="digest-stat-num">12</div>
               <div class="digest-stat-label">Opportunities</div>
             </div>
             <div class="digest-stat">
@@ -225,8 +235,8 @@
               <div class="digest-stat-label">Priority</div>
             </div>
             <div class="digest-stat">
-              <div class="digest-stat-num">3</div>
-              <div class="digest-stat-label">Demos</div>
+              <div class="digest-stat-num">7</div>
+              <div class="digest-stat-label">Secondary</div>
             </div>
           </div>
           <div class="digest-section-label">▲ Priority</div>
@@ -257,7 +267,7 @@
             <span class="digest-row-sqft">&nbsp;</span>
           </div>
           <div class="digest-footer">
-            <span class="digest-footer-text">Illustrative sample · + 11 more</span>
+            <span class="digest-footer-text">Illustrative · Actual counts vary by territory</span>
             <span class="digest-footer-badge">Limited Distribution</span>
           </div>
         </div>
@@ -282,7 +292,7 @@
   </div>
   <div class="proof-item">
     <div class="proof-item-label">Limited Distribution</div>
-    <div class="proof-item-sub">One per service type</div>
+    <div class="proof-item-sub">By territory &amp; service type</div>
   </div>
 </div>
 
@@ -335,7 +345,7 @@
       <div class="filter-card">
         <div class="filter-card-icon">◼</div>
         <div class="filter-card-title">Demolitions</div>
-        <div class="filter-card-desc">Guaranteed site services demand. First to call wins.</div>
+        <div class="filter-card-desc">High site-services demand. First to call wins.</div>
       </div>
       <div class="filter-card">
         <div class="filter-card-icon">◻</div>
@@ -363,29 +373,29 @@
     <div class="distro-inner">
       <div>
         <div class="section-label">Distribution</div>
-        <h2>One operator per service type per territory.</h2>
-        <p>This isn't a mass-market feed. Your filtered list is not shared with other operators in your service category within your territory.</p>
+        <h2>Limited by territory and service type.</h2>
+        <p>This isn't a mass-market feed. We aim to avoid sharing the same filtered product with direct competitors in the same service category and territory. Availability is limited and subject to your market.</p>
       </div>
       <div class="distro-visual">
         <div class="distro-slot">
           <div class="distro-slot-icon">D</div>
           <div class="distro-slot-text">Dumpster / Roll-Off</div>
-          <div class="distro-slot-badge">1 per territory</div>
+          <div class="distro-slot-badge">Limited</div>
         </div>
         <div class="distro-slot">
           <div class="distro-slot-icon">S</div>
           <div class="distro-slot-text">Portable Sanitation</div>
-          <div class="distro-slot-badge">1 per territory</div>
+          <div class="distro-slot-badge">Limited</div>
         </div>
         <div class="distro-slot">
           <div class="distro-slot-icon">F</div>
           <div class="distro-slot-text">Temporary Fencing</div>
-          <div class="distro-slot-badge">1 per territory</div>
+          <div class="distro-slot-badge">Limited</div>
         </div>
         <div class="distro-slot">
           <div class="distro-slot-icon">P</div>
           <div class="distro-slot-text">Pest / Pre-Treatment</div>
-          <div class="distro-slot-badge">1 per territory</div>
+          <div class="distro-slot-badge">Limited</div>
         </div>
       </div>
     </div>
@@ -434,7 +444,7 @@
     </div>
     <div class="faq-item">
       <div class="faq-q">Is this exclusive to my company?</div>
-      <div class="faq-a">We limit distribution — one operator per service type per territory. The underlying data is public record, but the filtered list built for your territory is not shared with your direct competitors.</div>
+      <div class="faq-a">We limit distribution by territory and service type — we aim to avoid sending the same filtered list to direct competitors in your area. The underlying data is public record, but the filtered product we build for your territory is not shared broadly. Availability is subject to your market.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">What does it cost?</div>
@@ -455,7 +465,7 @@
 
 <footer>
   <div class="container">
-    <p>PermitFeed is a product of <a href="/">KCo Systems</a> · Austin, TX</p>
+    <p>PermitFeed is a product of <a href="/">KCo Systems</a> · Austin pilot market · Operated from San Diego, CA</p>
     <div class="footer-links">
       <a href="/privacy">Privacy</a>
       <a href="/terms">Terms</a>
