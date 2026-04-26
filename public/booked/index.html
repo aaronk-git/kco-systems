@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booked — Never miss a hardscape lead again</title>
+<meta name="description" content="Your 24/7 AI phone line. Answers every lead, qualifies them, and books qualified consults straight to your calendar. No setup. Pause anytime.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    background: #f0ede8;
+    color: #1a1a1a;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .serif { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; }
+  .italic { font-style: italic; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav {
+    padding: 28px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-dot { width: 10px; height: 10px; background: #FF5B1F; border-radius: 50%; }
+  .nav-actions { display: flex; gap: 12px; }
+  .btn {
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-weight: 500;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .btn-ghost {
+    background: transparent;
+    color: #1a1a1a;
+    border: 1px solid #d4d0c8;
+  }
+  .btn-ghost:hover { background: rgba(0,0,0,0.04); }
+  .btn-primary {
+    background: #1a1a1a;
+    color: white;
+  }
+  .btn-primary:hover { background: #000; }
+  .btn-accent {
+    background: #FF5B1F;
+    color: white;
+  }
+  .btn-accent:hover { background: #e64d10; }
+
+  /* Hero */
+  .hero {
+    padding: 80px 0 100px;
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    gap: 60px;
+    align-items: center;
+  }
+  .hero h1 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(56px, 7vw, 96px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+  }
+  .hero h1 .accent { font-style: italic; }
+  .hero p.subhead {
+    font-size: 19px;
+    color: #555;
+    max-width: 520px;
+    margin-bottom: 8px;
+  }
+  .hero-card {
+    background: linear-gradient(135deg, #FF5B1F 0%, #FF8A3D 60%, #FFB57E 100%);
+    border-radius: 24px;
+    padding: 36px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .hero-card::before {
+    content: "";
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 280px; height: 280px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 50%;
+    filter: blur(40px);
+  }
+  .hero-pill {
+    background: rgba(0,0,0,0.85);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-pill::before {
+    content: "";
+    width: 8px; height: 8px;
+    background: #FFD700;
+    border-radius: 50%;
+  }
+  .hero-card h2 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 56px;
+    line-height: 1;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-card .tag { font-size: 16px; opacity: 0.95; margin-bottom: 24px; position: relative; z-index: 1;}
+  .hero-card .cta-block { position: relative; z-index: 1; }
+  .hero-card .btn-white {
+    background: white;
+    color: #1a1a1a;
+    width: 100%;
+    padding: 16px 24px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .hero-card .secondary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0,0,0,0.15);
+    padding: 12px 16px;
+    border-radius: 16px;
+    text-decoration: none;
+    color: white;
+  }
+  .hero-card .secondary-icon {
+    width: 40px; height: 40px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  .hero-card .secondary-text { flex: 1; }
+  .hero-card .secondary-text .l1 { font-weight: 600; font-size: 15px; }
+  .hero-card .secondary-text .l2 { font-size: 13px; opacity: 0.85; }
+  .hero-card .arrow {
+    width: 32px; height: 32px;
+    background: white;
+    color: #1a1a1a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  /* Tagline section */
+  .tagline {
+    padding: 60px 0 100px;
+    text-align: center;
+  }
+  .tagline h2 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* How it works */
+  .how-cards {
+    padding: 0 0 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .how-card {
+    border-radius: 24px;
+    padding: 32px;
+    color: white;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .how-card.c1 { background: linear-gradient(135deg, #FFB000 0%, #FF7A00 100%); }
+  .how-card.c2 { background: linear-gradient(135deg, #1B5BFF 0%, #5C2BD9 100%); }
+  .how-card.c3 { background: linear-gradient(135deg, #FF4E1B 0%, #FF8A1B 100%); }
+  .how-card h3 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+  .how-card p { font-size: 15px; opacity: 0.92; line-height: 1.45; }
+  .how-card-mock {
+    background: rgba(0,0,0,0.3);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+  }
+  .how-card-mock .small-label { font-size: 12px; opacity: 0.7; margin-bottom: 4px; }
+  .how-card-mock .price { font-size: 28px; font-weight: 700; }
+  .how-card-mock .price-unit { font-size: 14px; opacity: 0.7; }
+  .how-card-mock ul { list-style: none; font-size: 13px; line-height: 1.7; margin-top: 12px; opacity: 0.95; }
+
+  /* Story section */
+  .story {
+    padding: 80px 0;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .story-box {
+    border: 1px dashed #b8b1a4;
+    border-radius: 16px;
+    padding: 36px;
+    color: #555;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  .story-box em { color: #1a1a1a; font-style: italic; font-family: 'Instrument Serif', serif; font-size: 22px; }
+
+  /* Benefits header */
+  .benefits-header {
+    text-align: center;
+    padding: 80px 0 60px;
+  }
+  .benefits-header .label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 16px;
+  }
+  .benefits-header h2 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(40px, 5vw, 72px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+  }
+  .benefits-header p {
+    font-size: 17px;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Benefits grid */
+  .benefits {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding-bottom: 80px;
+  }
+  .benefit-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 24px;
+    border: 1px solid #e8e3da;
+  }
+  .benefit-icon {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    background: linear-gradient(135deg, #FF5B1F 0%, #FFB57E 100%);
+  }
+  .benefit-card.b2 .benefit-icon { background: linear-gradient(135deg, #1B5BFF 0%, #5C2BD9 100%); }
+  .benefit-card.b3 .benefit-icon { background: linear-gradient(135deg, #FFB000 0%, #FF7A00 100%); }
+  .benefit-card.b4 .benefit-icon { background: linear-gradient(135deg, #FF4E1B 0%, #1B5BFF 100%); }
+  .benefit-card.b5 .benefit-icon { background: linear-gradient(135deg, #FFD700 0%, #FF7A00 100%); }
+  .benefit-card.b6 .benefit-icon { background: linear-gradient(135deg, #1B5BFF 0%, #FF5B1F 100%); }
+  .benefit-card.b7 .benefit-icon { background: linear-gradient(135deg, #5C2BD9 0%, #FF5B1F 100%); }
+  .benefit-card.b8 .benefit-icon { background: linear-gradient(135deg, #FF7A00 0%, #FFD700 100%); }
+  .benefit-card h4 { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+  .benefit-card p { font-size: 14px; color: #666; line-height: 1.5; }
+
+  /* Pricing */
+  .pricing {
+    padding: 100px 0;
+    text-align: center;
+  }
+  .pricing-header { margin-bottom: 60px; }
+  .pricing-header .label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 16px;
+  }
+  .pricing-header h2 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(48px, 6vw, 88px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -1.5px;
+  }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .price-card {
+    border-radius: 24px;
+    padding: 36px;
+  }
+  .price-card.left {
+    background: white;
+    border: 1px solid #e8e3da;
+  }
+  .price-card.right {
+    background: #1a1a1a;
+    color: white;
+  }
+  .price-tier {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .price-card.left .price-tier {
+    background: #FFE5D6;
+    color: #FF5B1F;
+  }
+  .price-card.right .price-tier {
+    background: rgba(255, 91, 31, 0.2);
+    color: #FFB57E;
+  }
+  .price-name {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 24px;
+  }
+  .price-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 28px;
+  }
+  .price-amount .num { font-size: 56px; font-weight: 700; letter-spacing: -2px; }
+  .price-amount .unit { font-size: 18px; opacity: 0.7; }
+  .price-features {
+    list-style: none;
+    margin-bottom: 28px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(128,128,128,0.2);
+  }
+  .price-features li {
+    padding: 8px 0;
+    font-size: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .price-features li::before {
+    content: "✓";
+    color: #FF5B1F;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .price-card.right .price-features li::before { color: #FFB57E; }
+  .price-cta {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .price-card.left .price-cta {
+    background: #1a1a1a;
+    color: white;
+  }
+  .price-card.right .price-cta {
+    background: #FF5B1F;
+    color: white;
+  }
+  .roster-note {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 14px;
+    color: #666;
+  }
+  .roster-note strong { color: #FF5B1F; }
+
+  /* Risk reversal */
+  .risk {
+    padding: 60px 0 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .risk-card {
+    border: 1px dashed #b8b1a4;
+    border-radius: 16px;
+    padding: 28px;
+  }
+  .risk-card h4 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .risk-card .icon {
+    font-size: 22px;
+  }
+  .risk-card p { color: #666; font-size: 15px; line-height: 1.5; }
+
+  /* FAQ */
+  .faq-section {
+    padding: 80px 0;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 60px;
+    align-items: start;
+  }
+  .faq-section h2 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(40px, 5vw, 72px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    margin-bottom: 32px;
+  }
+  .faq-section h2 em { font-style: italic; }
+  details {
+    border-bottom: 1px solid #d4d0c8;
+    padding: 18px 0;
+    cursor: pointer;
+  }
+  details summary {
+    list-style: none;
+    font-size: 17px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::after {
+    content: "+";
+    font-size: 22px;
+    color: #888;
+    transition: transform 0.2s;
+  }
+  details[open] summary::after { content: "−"; }
+  details p {
+    padding-top: 14px;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .faq-cta {
+    background: linear-gradient(135deg, #FF7A00 0%, #FF5B1F 100%);
+    border-radius: 24px;
+    padding: 32px;
+    color: white;
+  }
+  .faq-cta-icon {
+    width: 60px; height: 60px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin-bottom: 18px;
+  }
+  .faq-cta h3 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 18px;
+  }
+  .faq-cta .btn-white {
+    background: white;
+    color: #1a1a1a;
+    width: 100%;
+    padding: 14px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 14px;
+  }
+  .faq-cta .email {
+    font-size: 14px;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Footer */
+  footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 60px 0 40px;
+    margin-top: 60px;
+  }
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  footer .logo { color: white; }
+  footer .footer-links {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    opacity: 0.7;
+  }
+  footer .footer-links a { color: white; text-decoration: none; }
+  footer .footer-meta {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 13px;
+    opacity: 0.5;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 40px; padding: 40px 0 60px; }
+    .hero-card { min-height: 400px; }
+    .how-cards { grid-template-columns: 1fr; }
+    .benefits { grid-template-columns: repeat(2, 1fr); }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .risk { grid-template-columns: 1fr; padding: 40px 0 60px; }
+    .faq-section { grid-template-columns: 1fr; gap: 40px; }
+    nav .nav-actions .btn-ghost { display: none; }
+  }
+  @media (max-width: 500px) {
+    .benefits { grid-template-columns: 1fr; }
+    .container { padding: 0 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Nav -->
+  <nav>
+    <div class="logo">
+      <span class="logo-dot"></span>
+      Booked
+    </div>
+    <div class="nav-actions">
+      <a href="mailto:hello@kco-systems.com?subject=Booked%20intro%20call" class="btn btn-ghost">✉ Email us</a>
+      <a href="#pricing" class="btn btn-primary">See pricing</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1>
+        Stop missing<br>
+        leads.<br>
+        Get more <span class="serif italic accent">booked</span>
+      </h1>
+      <p class="subhead">Pause or cancel anytime.</p>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-pill">Founding Member pricing</div>
+      <div>
+        <h2>Try<br>Booked</h2>
+        <p class="tag" style="margin-top: 8px;">A 24/7 AI phone line for hardscape pros.</p>
+      </div>
+      <div class="cta-block">
+        <a href="#pricing" class="btn-white">See pricing</a>
+        <a href="mailto:hello@kco-systems.com?subject=Booked%20intro%20call" class="secondary">
+          <div class="secondary-icon">✉</div>
+          <div class="secondary-text">
+            <div class="l1">Email us</div>
+            <div class="l2">hello@kco-systems.com</div>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tagline -->
+  <section class="tagline">
+    <h2>The way contractors <em class="italic">should've</em><br>been answering the phone</h2>
+  </section>
+
+  <!-- How it works -->
+  <section class="how-cards">
+    <div class="how-card c1">
+      <div class="how-card-mock">
+        <div class="small-label">Founding Member</div>
+        <div class="price">$995<span class="price-unit">/month</span></div>
+        <ul>
+          <li>✓ One flat monthly fee</li>
+          <li>✓ ~7-day install</li>
+          <li>✓ Pause or cancel anytime</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Subscribe</h3>
+        <p>Pick a plan. No setup fee. No contracts. Pause or cancel anytime.</p>
+      </div>
+    </div>
+    <div class="how-card c2">
+      <div class="how-card-mock" style="display: flex; flex-wrap: wrap; gap: 6px;">
+        <span style="background: rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 999px; font-size: 13px;">Budget</span>
+        <span style="background: rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 999px; font-size: 13px;">Project type</span>
+        <span style="background: rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 999px; font-size: 13px;">Timeline</span>
+        <span style="background: rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 999px; font-size: 13px;">Geography</span>
+        <span style="background: rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 999px; font-size: 13px;">Property type</span>
+        <span style="background: rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 999px; font-size: 13px;">+ your custom criteria</span>
+      </div>
+      <div>
+        <h3>We Build</h3>
+        <p>Your AI phone line goes live in ~7 business days. Custom-tuned to your shop, your services, your qualifying criteria.</p>
+      </div>
+    </div>
+    <div class="how-card c3">
+      <div class="how-card-mock">
+        <div class="small-label">Today, 3:14 PM</div>
+        <div style="font-size: 15px; font-weight: 600; margin: 8px 0;">📅 New consult booked</div>
+        <div style="font-size: 13px; opacity: 0.85;">Sarah K. — Patio install, $40K budget, Saturday 10am</div>
+      </div>
+      <div>
+        <h3>You Get Booked</h3>
+        <p>Qualified consults appear on your calendar. Email summary + transcript after every call.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="story">
+    <div class="story-box">
+      Built in 2026 by AK at <a href="#" style="color: #1a1a1a;">KCo Systems</a>. Booked is a productized service — one operator, limited roster, top-quality install. We don't outsource. We don't hire bench designers. We build, run, and continuously tune your AI lead line ourselves.
+    </div>
+  </section>
+
+  <!-- Benefits header -->
+  <section class="benefits-header">
+    <div class="label">MEMBERSHIP BENEFITS</div>
+    <h2>It's <em class="italic">"you'll never go<br>back"</em> better</h2>
+    <p>Booked replaces missed calls, voicemail tag, and the cost of a $45K/yr CSR for one flat monthly fee, with consults so qualified you'll wonder how you managed without it.</p>
+  </section>
+
+  <!-- Benefits grid -->
+  <section class="benefits">
+    <div class="benefit-card b1">
+      <div class="benefit-icon">📞</div>
+      <h4>24/7 Coverage</h4>
+      <p>Every call answered. After hours, weekends, lunch breaks — never voicemail again.</p>
+    </div>
+    <div class="benefit-card b2">
+      <div class="benefit-icon">🔒</div>
+      <h4>Fixed Monthly</h4>
+      <p>One flat fee. No per-call charges. No per-minute meters. No surprises.</p>
+    </div>
+    <div class="benefit-card b3">
+      <div class="benefit-icon">⚡</div>
+      <h4>~7-day Install</h4>
+      <p>Up and running in about a week. No long onboarding. No drawn-out integrations.</p>
+    </div>
+    <div class="benefit-card b4">
+      <div class="benefit-icon">🎯</div>
+      <h4>Custom Qualified</h4>
+      <p>You define what "qualified" means. The AI screens every lead to YOUR criteria.</p>
+    </div>
+    <div class="benefit-card b5">
+      <div class="benefit-icon">📅</div>
+      <h4>Direct Booking</h4>
+      <p>Qualified leads land on your Google Cal, Cal.com, JobTread, or HCP — automatically.</p>
+    </div>
+    <div class="benefit-card b6">
+      <div class="benefit-icon">📧</div>
+      <h4>Call Summaries</h4>
+      <p>After every call: email recap + full transcript + qualification score in your inbox.</p>
+    </div>
+    <div class="benefit-card b7">
+      <div class="benefit-icon">🔧</div>
+      <h4>Weekly Tuning</h4>
+      <p>Your feedback, our iteration. The AI gets sharper for your shop every single week.</p>
+    </div>
+    <div class="benefit-card b8">
+      <div class="benefit-icon">⏸️</div>
+      <h4>Pause Anytime</h4>
+      <p>Off-season? Pause. Need to cancel? One click. No contracts, no hard sells.</p>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing" id="pricing">
+    <div class="pricing-header">
+      <div class="label">PRICING</div>
+      <h2>One subscription,<br><em class="italic">endless consults</em></h2>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card left">
+        <span class="price-tier">FOUNDING MEMBER</span>
+        <h3 class="price-name">First 5 only</h3>
+        <div class="price-amount">
+          <span class="num">$995</span>
+          <span class="unit">/month</span>
+        </div>
+        <ul class="price-features">
+          <li>Locked in lifetime — never goes up</li>
+          <li>~7-day install</li>
+          <li>Custom qualification criteria</li>
+          <li>Direct calendar integration</li>
+          <li>Email summaries + transcripts</li>
+          <li>Weekly tuning calls</li>
+          <li>Pause or cancel anytime</li>
+          <li>75% refund week 1, no questions</li>
+        </ul>
+        <a href="mailto:hello@kco-systems.com?subject=Founding%20Member%20spot%20-%20Booked" class="price-cta">Claim a founding spot →</a>
+      </div>
+      <div class="price-card right">
+        <span class="price-tier">STANDARD</span>
+        <h3 class="price-name">Open to all</h3>
+        <div class="price-amount">
+          <span class="num">$1,495</span>
+          <span class="unit">/month</span>
+        </div>
+        <ul class="price-features">
+          <li>Same install timeline</li>
+          <li>Same custom criteria</li>
+          <li>Same calendar integrations</li>
+          <li>Same email summaries</li>
+          <li>Same weekly tuning</li>
+          <li>Pause or cancel anytime</li>
+          <li>75% refund week 1, no questions</li>
+          <li>No founding lock-in</li>
+        </ul>
+        <a href="mailto:hello@kco-systems.com?subject=Booked%20intro%20call" class="price-cta">Book a 15-min intro →</a>
+      </div>
+    </div>
+    <div class="roster-note">
+      <strong>Limited to 3 new clients this month.</strong> Once full, waitlist only.
+    </div>
+  </section>
+
+  <!-- Risk reversal -->
+  <section class="risk">
+    <div class="risk-card">
+      <h4><span class="icon">⏸️</span> Pause anytime</h4>
+      <p>Off-season? Pause your subscription with one click — no questions, no penalties. Resume when you're ready.</p>
+    </div>
+    <div class="risk-card">
+      <h4><span class="icon">✓</span> Try it for a week</h4>
+      <p>Not loving it after 7 days? Get 75% back. No questions asked, no exit interview, no awkward call.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div>
+      <h2><em>Frequently</em> asked questions</h2>
+      <details>
+        <summary>How fast is the install?</summary>
+        <p>About 7 business days from sign-up. We provision a Twilio number, build your custom voice agent prompt, integrate it with your calendar, and run final testing — then it's live.</p>
+      </details>
+      <details>
+        <summary>Who's the AI? Will it sound like a robot?</summary>
+        <p>Booked is built on best-in-class voice AI (ElevenLabs voices, Deepgram speech recognition). Most callers don't know it's an AI in the first 30 seconds. We disclose it on every call to stay compliant.</p>
+      </details>
+      <details>
+        <summary>What does "qualified" mean?</summary>
+        <p>You define it. We build the qualification script around YOUR criteria — budget thresholds, project types, geography, timeline, property requirements, anything. The AI uses your definition, not ours.</p>
+      </details>
+      <details>
+        <summary>Will it work with my calendar / CRM?</summary>
+        <p>Native integrations: Google Calendar, Cal.com, Housecall Pro, JobTread, Buildertrend. Other systems via webhook (we'll build it during install).</p>
+      </details>
+      <details>
+        <summary>Is there a setup fee?</summary>
+        <p>No. Just the monthly subscription. Install costs are baked into your first month.</p>
+      </details>
+      <details>
+        <summary>Can I cancel anytime?</summary>
+        <p>Yes. One click in your dashboard. No exit fees, no contracts, no penalty period.</p>
+      </details>
+      <details>
+        <summary>What happens if I cancel?</summary>
+        <p>Your AI line goes offline within 24 hours of cancellation. Your call history and transcripts are exported to you and then deleted on request.</p>
+      </details>
+      <details>
+        <summary>Does it work for businesses besides hardscape?</summary>
+        <p>Right now we focus on residential outdoor living and hardscape contractors ($1-10M revenue). We expand to adjacent verticals as we grow — book a call if you want to discuss your business.</p>
+      </details>
+      <details>
+        <summary>What if I have technical questions during onboarding?</summary>
+        <p>You get direct Slack/email access to AK throughout onboarding. Plus a weekly tuning call to refine the agent based on real call data.</p>
+      </details>
+      <details>
+        <summary>What about the 75% refund?</summary>
+        <p>Try Booked for 7 days. If it's not a fit for any reason, request a refund — we send back 75% of your first month, no questions asked. We keep the rest to cover install costs.</p>
+      </details>
+      <details>
+        <summary>Why only 3 new clients per month?</summary>
+        <p>Booked is run solo — no outsourcing, no junior team. Limited roster keeps quality high and ensures every install gets full attention. Once full, waitlist only.</p>
+      </details>
+    </div>
+    <div class="faq-cta">
+      <div class="faq-cta-icon">😊</div>
+      <h3>Book a 15-min intro call</h3>
+      <a href="mailto:hello@kco-systems.com?subject=Booked%20intro%20call" class="btn-white">Book a call</a>
+      <div class="email">
+        ✉ Prefer email? hello@kco-systems.com
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="logo">
+      <span class="logo-dot"></span>
+      Booked by KCo Systems
+    </div>
+    <div class="footer-links">
+      <a href="#">Terms of service</a>
+      <a href="#">Privacy policy</a>
+    </div>
+  </div>
+  <div class="container footer-meta">
+    Headquartered in California · © 2026 Karatas & Company LLC dba KCo Systems
+  </div>
+</footer>
+
+</body>
+</html>
