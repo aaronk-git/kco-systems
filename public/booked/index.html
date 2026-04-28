@@ -615,6 +615,13 @@
     .container { padding: 0 18px; }
   }
 </style>
+
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  function trackVA(event, props) { if (window.va) window.va('track', event, props || {}); }
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
@@ -627,7 +634,7 @@
       Booked
     </div>
     <div class="nav-actions">
-      <a href="tel:+19495183741" class="btn btn-ghost">📞 Try the AI</a>
+      <a href="tel:+19495183741" class="btn btn-ghost" onclick="trackVA('phone_cta_click', {location:'nav'})">📞 Try the AI</a>
       <a href="#pricing" class="btn btn-primary">See pricing</a>
     </div>
   </nav>
@@ -651,7 +658,7 @@
       </div>
       <div class="cta-block">
         <a href="#pricing" class="btn-white">See pricing</a>
-        <a href="tel:+19495183741" class="secondary">
+        <a href="tel:+19495183741" class="secondary" onclick="trackVA('phone_cta_click', {location:'hero'})">
           <div class="secondary-icon">📞</div>
           <div class="secondary-text">
             <div class="l1">Call the AI now</div>
@@ -794,7 +801,7 @@
           <li>Pause or cancel anytime</li>
           <li>75% refund in week 1 after launch, no questions</li>
         </ul>
-        <a href="https://cal.com/aaron-karatas/booked-intro" class="price-cta">Claim a founding spot →</a>
+        <a href="https://cal.com/aaron-karatas/booked-intro" class="price-cta" onclick="trackVA('cal_cta_click', {location:'pricing_founding'})">Claim a founding spot →</a>
         <div class="price-cta-secondary">
           <a href="https://buy.stripe.com/14A28r7tg0Xj4qS0BBaZi00" target="_blank" rel="noopener">Or skip the call — subscribe directly →</a>
         </div>
@@ -816,7 +823,7 @@
           <li>75% refund in week 1 after launch, no questions</li>
           <li>No founding lock-in</li>
         </ul>
-        <a href="https://cal.com/aaron-karatas/booked-intro" class="price-cta">Book a 15-min intro →</a>
+        <a href="https://cal.com/aaron-karatas/booked-intro" class="price-cta" onclick="trackVA('cal_cta_click', {location:'pricing_standard'})">Book a 15-min intro →</a>
         <div class="price-cta-secondary">
           <a href="https://buy.stripe.com/dRm5kDaFs9tPf5w2JJaZi01" target="_blank" rel="noopener">Or skip the call — subscribe directly →</a>
         </div>
@@ -891,9 +898,9 @@
     <div class="faq-cta">
       <div class="faq-cta-icon">😊</div>
       <h3>Book a 15-min intro call</h3>
-      <a href="https://cal.com/aaron-karatas/booked-intro" class="btn-white">Book a call</a>
+      <a href="https://cal.com/aaron-karatas/booked-intro" class="btn-white" onclick="trackVA('cal_cta_click', {location:'faq'})">Book a call</a>
       <div class="email">
-        ✉ Prefer email? aaron@kco-systems.com
+        ✉ Prefer email? <a href="mailto:aaron@kco-systems.com" onclick="trackVA(\'email_cta_click\', {location:\'faq\'})" style="color:inherit;">aaron@kco-systems.com</a>
       </div>
     </div>
   </section>
