@@ -245,6 +245,13 @@
     .container { padding: 0 18px; }
   }
 </style>
+
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  function trackVA(event, props) { if (window.va) window.va('track', event, props || {}); }
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
@@ -257,8 +264,8 @@
       KCo Systems
     </a>
     <div class="nav-actions">
-      <a href="mailto:hello@kco-systems.com" class="btn btn-ghost">Get in touch</a>
-      <a href="/booked" class="btn btn-primary">See Booked</a>
+      <a href="mailto:hello@kco-systems.com" class="btn btn-ghost" onclick="trackVA('email_cta_click', {location:'home_nav'})">Get in touch</a>
+      <a href="/booked" class="btn btn-primary" onclick="trackVA('booked_card_click', {location:'home_nav'})">See Booked</a>
     </div>
   </nav>
 
@@ -271,7 +278,7 @@
 
   <!-- Products -->
   <section class="products">
-    <a href="/booked" class="product-card booked">
+    <a href="/booked" class="product-card booked" onclick="trackVA('booked_card_click', {location:'home_card'})">
       <div>
         <div class="pill">Active product</div>
         <h2 class="product-name">Booked</h2>
@@ -282,7 +289,7 @@
         <span class="arrow">→</span>
       </div>
     </a>
-    <a href="mailto:hello@kco-systems.com?subject=Custom%20build%20inquiry" class="product-card custom">
+    <a href="mailto:hello@kco-systems.com?subject=Custom%20build%20inquiry" class="product-card custom" onclick="trackVA('custom_card_click', {location:'home_card'})">
       <div>
         <div class="pill">By referral or invitation</div>
         <h2 class="product-name">Custom builds</h2>
