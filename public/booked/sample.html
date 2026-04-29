@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hear Booked — 90-second sample call</title>
+<meta name="description" content="A 90-second sample of what your Booked AI phone line sounds like. Answers every call, qualifies leads, books consults.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    background: #f0ede8;
+    color: #1a1a1a;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .serif { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; }
+  .italic { font-style: italic; }
+  .container { max-width: 720px; margin: 0 auto; padding: 0 24px; width: 100%; }
+
+  nav {
+    padding: 28px 0;
+  }
+  nav .container { display: flex; justify-content: space-between; align-items: center; }
+  nav .logo {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+  nav .back-link {
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  nav .back-link:hover { color: #1a1a1a; }
+
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+  }
+
+  .label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin-bottom: 24px;
+  }
+  .lede {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 40px;
+    max-width: 580px;
+  }
+
+  .player-wrap {
+    background: white;
+    border-radius: 24px;
+    padding: 32px;
+    margin-bottom: 40px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .player-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: #666;
+  }
+  .player-meta strong { color: #1a1a1a; font-weight: 600; }
+  audio {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  .scenario {
+    background: #faf8f4;
+    border-left: 3px solid #1a1a1a;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+    font-size: 15px;
+    color: #444;
+  }
+  .scenario strong { color: #1a1a1a; }
+
+  .cta-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 24px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-primary {
+    background: #1a1a1a;
+    color: white;
+  }
+  .btn-primary:hover { background: #000; transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: #1a1a1a;
+    border: 1px solid #1a1a1a;
+  }
+  .btn-secondary:hover { background: #1a1a1a; color: white; }
+
+  footer {
+    padding: 40px 0 28px;
+    font-size: 13px;
+    color: #888;
+    text-align: center;
+  }
+  footer a { color: #555; text-decoration: none; }
+  footer a:hover { color: #1a1a1a; }
+
+  @media (max-width: 600px) {
+    .player-wrap { padding: 24px; }
+    .cta-row { flex-direction: column; }
+    .btn { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  function trackVA(event, props) { if (window.va) window.va('track', event, props || {}); }
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+
+<nav>
+  <div class="container">
+    <a href="/booked" class="logo">Booked</a>
+    <a href="/booked" class="back-link" onclick="trackVA('sample_back_to_lp_nav', {})">← back to overview</a>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <div class="label">SAMPLE CALL</div>
+    <h1>Hear what your <em class="italic">Booked line</em> sounds like.</h1>
+    <p class="lede">90 seconds. Real call to a Booked AI line. The caller is testing what their version of the product would sound like — exactly what your inbound leads will hear when we build yours.</p>
+
+    <div class="player-wrap">
+      <div class="player-meta">
+        <strong>Sample call</strong>
+        <span>1:50 · m4a</span>
+      </div>
+      <audio controls preload="metadata" onplay="trackVA('sample_play', {})" onended="trackVA('sample_completed', {})">
+        <source src="/booked/sample.m4a" type="audio/mp4">
+        Your browser doesn't support audio playback. <a href="/booked/sample.m4a">Download the file</a>.
+      </audio>
+    </div>
+
+    <div class="scenario">
+      <strong>What you're hearing:</strong> a curious caller asks for a demo. Booked greets, discloses it's an AI, drops into demo mode, qualifies the project (size, budget, timeline, location, decision authority), books a fake consult, then breaks character and pitches the real Booked intro. Your version would qualify on <em>your</em> criteria, route to <em>your</em> calendar, and use <em>your</em> language.
+    </div>
+
+    <div class="cta-row">
+      <a href="/booked#pricing" class="btn btn-primary" onclick="trackVA('sample_to_pricing', {})">See pricing →</a>
+      <a href="https://cal.com/aaron-karatas/booked-intro" class="btn btn-secondary" target="_blank" rel="noopener" onclick="trackVA('sample_to_cal', {})">Book a 15-min intro</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    Built by Aaron Karatas · <a href="mailto:aaron@kco-systems.com">aaron@kco-systems.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
