@@ -156,6 +156,7 @@
   function trackVA(event, props) { if (window.va) window.va('track', event, props || {}); }
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 
 <nav>
   <div class="container">
@@ -187,14 +188,15 @@
 
     <div class="cta-row">
       <a href="/booked#pricing" class="btn btn-primary" onclick="trackVA('sample_to_pricing', {})">See pricing →</a>
-      <a href="https://cal.com/aaron-karatas/booked-intro" class="btn btn-secondary" target="_blank" rel="noopener" onclick="trackVA('sample_to_cal', {})">Book a 15-min intro</a>
+      <a href="https://cal.com/aaron-karatas/booked-intro" class="btn btn-secondary" target="_blank" rel="noopener" onclick="trackVA('sample_to_cal', {})">Book a free 15-min walkthrough</a>
     </div>
   </div>
 </main>
 
 <footer>
   <div class="container">
-    Built by Aaron Karatas · <a href="mailto:aaron@kco-systems.com">aaron@kco-systems.com</a>
+    <img src="/kco-logo.jpg" alt="KCo Systems" style="height: 22px; opacity: 0.45; margin-bottom: 12px; display: inline-block;">
+    <div>Built by Aaron Karatas · <a href="mailto:aaron@kco-systems.com">aaron@kco-systems.com</a></div>
   </div>
 </footer>
 
